@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	    <meta content="telephone=no" name="format-detection"/>
+	    <link rel="stylesheet" href="css/layer.css" />
+	    <link rel="stylesheet" href="css/ydui.css?rev=a4b9d6e8c9c1cae7ea4676f911682af7"/>
+	    <link rel="stylesheet" href="css/tiku.css" />
+	    <link rel="stylesheet" href="css/globle.css" /><!--数字插件-->
+	    <link rel="stylesheet" href="css/index.css"/>
+	</head>
+	<body>
+	<div class="page active" id="tiku_buyinfo">
+		<div class="g-flexview">
+			<div class="m-navbar">
+				<a href="#" onClick="window.history.back()" class="navbar-item buy_info_back">
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">初级会计职称VIP经典题库</span>
+                </div>
+			</div>
+			<div class="g-scrollview">
+				<div class="id_J_ScrollTab m-scrolltab">
+					<div class="scrolltab-content">
+						<div class="scrolltab-content-item">
+							<div class="top_count">
+								<!--优惠倒计时-->
+								<div class="time_box">
+                                    <div class="time">
+                                        <span class="times">优惠倒计时：07 : 22 : 13</span>
+                                        <span class="s-time">: 05</span>
+                                    </div>
+                                </div>
+                                <!--累计购买人数-->
+                                <div class="top_count_warp">
+                                	<div class="p1">
+                                		<span class="count_default">累计用户</span>
+                                		<!--数字滚动插件插件-->
+                                		<div id="dataNums" style="display: inline-block;vertical-align: middle;"></div>
+                                		<span class="count_default">人已购买</span>
+                                	</div>
+                                	<p class="p2"></p>
+                                </div>
+							</div>
+							
+							<ul class="top_count_intro">
+                                <li><img src="img/buyinfo_qpt.png">全平台学习</li>
+                                <li><img src="img/buyinfo_kd.png">精准考点</li>
+                                <li><img src="img/buyinfo_jg.png">结构清晰</li>
+                                <li><img src="img/buyinfo_bj.png">错题笔记</li>
+                                <li><img src="img/buyinfo_tiku.png">海量题库</li>
+                                <li><img src="img/buyinfo_yc.png">通过率预测</li>
+                                <li><img src="img/buyinfo_jx.png">难题攻克</li>
+                                <li><img src="img/buyinfo_gx.png">免费更新</li>
+                           </ul>
+						</div>
+						
+						<div class="scrolltab-content-item">
+							<div class="per-recommend flex">
+                                <div>
+                                    <img class="usr_img" src="img/132.jpg">  
+                                </div>
+                                <div class="rights">
+                                	建议多回顾错题提高正确率，积小流以成江海
+                                	<ul class="tips_list">
+                                		<li>做题不多</li>
+                                		<li>正确率低</li>
+                                		<li>初试锋芒</li>
+                                	</ul>
+                                </div>
+							</div>
+						</div>
+						
+						<div class="scrolltab-content-item">
+                            <div class="lesson-info tiku_html">
+                                <div class="top">科目信息</div>
+                                <div class="mids">
+                                	本题库包含<span class="red subejct_nums">2</span>
+                                	个科目，共<span class="red questions">0</span>道精编考题
+                                </div>
+                                <div class="bottom">
+                                    <ul class="id_subject_list"> 
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>初级会计实务
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li> 
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>经济法基础
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li>
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>初级会计实务
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li> 
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>初级会计实务
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li> 
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>初级会计实务
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li> 
+                                    	<li>
+                                    		<div class="left">
+                                    			<span class="point"></span>初级会计实务
+                                    		</div>
+                                    		<div class="righta">0题</div> 
+                                    	</li> 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scrolltab-content-item">
+                            <div class="ask_info"> 
+                                <div class="top flex sb">
+                                	问大家<span class="go_lookall none">查看全部 &gt;</span>
+                                </div>
+                                <div class="sb flex bottom">
+                                	题库好不好，问问已买过的考友
+                                    <div class="ask_btn">去提问</div>
+                                </div>
+                                <ul class="have_ask none"></ul>
+                            </div>
+                        </div>
+						
+						<div class="scrolltab-content-item">
+							<div class="comments">
+								<div class="top">考友强烈推荐</div>
+								<div class="bottom">
+									<div class="boxs">
+										<div class="box">
+											<div class="head flex sb">
+												<div class="flex">
+													<img src="img/132.jpg">
+													<div class="name">
+														<p>纳纳</p>
+													</div>
+												</div>
+												<div class="fs-12">2019-05-17 10:51:02</div>
+											</div>
+											<div class="foot">海口君我在特旅客透露哦</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			
+			</div>
+			<!--优惠红包样式-->
+			<div class="popup">
+                <div class="mask_transition mask"></div>
+                <div class="coupon-box">
+                    <div class="coupon-main" style="display: block;">
+                        <div class="head text-center"><span class="ticket_value">38</span> 元</div>
+                        <div class="text-center mids">现金优惠券已放入你的账户</div>
+                        <div class="flex use_line">
+                            <a class="btns btn-use">立即使用</a>
+                        </div>
+                    </div>
+                    <!--金币的动态样式-->
+                    <div class="coupon-dh"></div>
+                </div>
+            </div>
+			
+			<!--顶部按钮-->
+			<div class="gotop">
+				<img src="img/top.png">
+			</div>
+			<!--优惠黄色提示框-->
+			<div class="ad_msg fs-12 none">
+				已使用：
+				<div class="integral_line">
+					优惠券减<span class="j_price">38</span>元
+				</div>
+				<div class="coupon_line none">
+					<span class="point">65</span>积分抵
+					<span class="d_price">15</span>元
+				</div>
+				<div class="ye_line none">
+					余额抵<span class="y_price">35</span>元
+				</div>
+			</div>
+			<footer class="m-tabbar">
+                <ul class="flex">
+                    <li class="buyinfo_new_left">
+                        <div class="s_price">优惠价￥160</div>
+                        <div class="n_price">原价￥198</div>
+                    </li>
+                    <li class="buyinfo_new_right"> 
+                        <button type="button" class="btn-block btn_buy" style="border-radius: inherit;">去付款</button>
+                    </li>
+                </ul>
+           </footer>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/ydui.flexible.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/ydui.js"></script>
+	<!--数字插件:改-->
+	<script src="js/num.js"></script>
+	<script>
+		//数字插件初始化
+		$("#dataNums").rollNumDaq({
+            deVal: 165528266
+        });
+        init_function();
+        // 顶部倒计时
+        var ts = 9;//毫秒的 计算动态
+        setInterval(function() {
+            $('#tiku_buyinfo .time_box .s-time').html(': 0' + ts);
+            ts--;
+            if (ts == -1) ts = 9;
+        }, 100);
+        
+        var timenow = new Date();
+        var second = timenow.getHours() * 3600; //小时
+        second += timenow.getMinutes() * 60; //分钟
+        second += timenow.getSeconds();
+        var intDiff = 86400 - second;//倒计时总秒数量
+        //时分秒的计算方法
+		function timer(intDiff){
+		    window.setInterval(function(){
+		    var day=0,
+		        hour=0,
+		        minute=0,
+		        second=0;//时间默认值        
+		    if(intDiff > 0){
+		        day = Math.floor(intDiff / (60 * 60 * 24));
+		        hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+		        minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+		        second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+		    }
+		    if (minute <= 9) minute = '0' + minute;
+		    if (second <= 9) second = '0' + second;
+		    $('#tiku_buyinfo .time_box .times').html('优惠倒计时：' + hour + ' : ' + minute + ' : ' + second);
+		    intDiff--;
+		    }, 1000);
+		} 
+		//倒计时的运行方法
+		timer(intDiff);
+		
+		//初始化方法
+		function init_function(){
+			
+			var _s = [] , _a = [] , _b = [] , _c = [];
+			//加载题库科目
+			$.each($(".id_subject_list li"), function(index,item) {
+				_b = '<li><div class="left"><span class="point"></span>初级会计实务</div><div class="righta">0题</div></li>';
+				if(index < 5){
+					_s += _b;
+					
+				}else{//判断超过5的题库数据
+					_a += '<div class="more_box">'+_b+'</div>';
+					_c = '<div class="all_subject_click"><i class="splidedown i-main"></i><span>点击显示全部科目</span></div>'
+				}
+			});
+			$(".id_subject_list").html(_s+_a+_c);//大于5的时候加入的数据
+		}
+		
+		//收起和显示的点击事件
+		$("body").on("click",".all_subject_click",function(){
+			$(".all_subject_click").find("span").text("收起");
+			$(".all_subject_click").toggleClass("sample_subject_click").toggleClass("all_subject_click");
+			$(".more_box").slideDown(300);
+		})
+		$("body").on("click",".sample_subject_click",function(){
+			$(".sample_subject_click").find("span").text("点击显示全部科目");
+			$(".sample_subject_click").toggleClass("sample_subject_click").toggleClass("all_subject_click");
+			$(".more_box").slideUp(300);
+		})
+		
+		var  _a = 0;
+		//页面内容的滑动方法
+		$(".g-scrollview").on("scroll",function(){
+			var _this = $(this) , _s = [] , _html , _length ;
+			//判断是否滑动到顶部是否隐藏顶部按钮
+			if($(this).scrollTop() == 0) {
+				$("#tiku_buyinfo .gotop").hide();
+			}else{
+				$("#tiku_buyinfo .gotop").show();
+			}
+			_html = $(".comments .bottom").html();
+			_length = $(".comments .bottom .boxs").length;
+			//滚动条到底部的条件即为scrollTop + clientHeight == scrollHeight滚动总高度
+			if (_this.scrollTop() >= $(".id_J_ScrollTab").height() - _this.height()){
+				//判断大于10的数量则停止加载数据
+				if(_length > 9){
+					//判断是否有增加loadli
+					if($("div").hasClass("loadli") == true)return;
+					$(".comments .bottom").append('<div class="loadli">没有更多了</div>');
+				}else{
+					for(var i = 0; i < 3; i ++){
+						 _a ++;
+						 _s += '<div class="boxs">'
+								+'<div class="box">'
+									+'<div class="head flex sb">'
+										+'<div class="flex">'
+											+'<img src="img/132.jpg">'
+											+'<div class="name">'
+												+'<p>纳纳'+i+'</p>'
+											+'</div>'
+										+'</div>'
+										+'<div class="fs-12">2019-05-17 10:51:0'+_a+'</div>'
+									+'</div>'
+									+'<div class="foot">海口君我在特旅客透露哦</div>'
+								+'</div>'
+							+'</div>';
+						$(".comments .bottom").html(_html + _s);
+					}
+				}
+			}
+			
+		})
+		
+		//顶部显示的点击事件
+		$("body").on("click","#tiku_buyinfo .gotop",function(){
+			//$(".g-scrollview").scrollTop("0");
+			$('#tiku_buyinfo .g-scrollview').animate({ scrollTop: 0 }, 700);
+		})
+		
+		//优惠红包立即使用的点击事件
+		$('body').on('click', '#tiku_buyinfo .btn-use', function() {
+			
+			$.easing.easeInBack = function(e) { return e * e * (3 * e - 2) };
+			$("#tiku_buyinfo .coupon-dh").show();//显示金币样式
+			//距离顶部的高度+金币本身高度的一半
+			var _dvimgTop = $(".coupon-main").offset().top + $(".coupon-dh").height()/2;
+			//算出距离左边的宽度+红包整个宽度的一半-图片本身宽度的一半
+			var _dvimgLeft = $(".coupon-main").offset().left + $(".coupon-main").width()/2 - $(".coupon-dh").width()/2;
+
+			//金币样式
+			$("#tiku_buyinfo .coupon-dh").css({
+				"top" : _dvimgTop ,
+				"left" : _dvimgLeft ,
+			})
+			var dhTop = $(".buyinfo_new_left").offset().top - $(".buyinfo_new_left").height();
+			
+			$(".coupon-main").hide();//隐藏红包页面，开始动画
+			//金币动画
+			$("#tiku_buyinfo .coupon-dh").animate({
+				left: [_dvimgLeft/3, 'linear'],
+                top: [dhTop , 'easeInBack']
+			},1000)
+			.fadeOut(200, function() { //淡出
+                $(".coupon-dh").detach(); //detach移除被选择的元素包括下面所有的节点
+            });
+           	//延迟时间要比上面相加的时间快一点
+           	setTimeout(function(){
+           		$(".popup").hide();//隐藏红包界面
+           		$(".ad_msg").removeClass("none");//显示黄色提示框优惠
+           	},1100)
+
+		})
+		
+		
+	</script>
+	</body>
+</html>

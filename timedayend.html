@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	    <meta content="telephone=no" name="format-detection"/>
+	    <link rel="stylesheet" href="css/ydui.css?rev=a4b9d6e8c9c1cae7ea4676f911682af7"/>
+	    <link rel="stylesheet" href="css/tiku.css" />
+	    <link rel="stylesheet" href="css/index.css"/>
+	    <script src="js/ydui.flexible.js"></script>
+	    <style>
+	    </style>
+	</head>
+	<body>
+		<div class="g-flexview" id="time_dayend">
+			<div class="g-scrollview" style="background: #fff;">
+				<div class="main">
+					<div class="box-calendar">
+						<div class="day_box_flex">
+							<span class="day-process">2/3</span>
+							<span class="box boximg"></span>
+						</div>
+						<div class="day-calendar"></div>
+					</div>
+					<div class="gbox day-flex-row">
+						<div class="GaugeMeter" id="PreviewGaugeMeter_2">0</div>
+						<div>%</div>
+					</div>
+					<div class="right-word">正确率</div>
+				</div>
+				
+				<div class="day-water" style="height: 307.5px;">
+					<div class="new-water-1"></div>
+					<div class="new-water-2"></div>
+					<div style="position: absolute;top: .87rem;left: 0;width: 100%;">
+						<div class="n-class flex flexaligin">
+							<div class="all-num">
+								<div class="user_do_nums">20</div>
+								<div class="titlefz">总做题数</div>
+							</div>
+							<div class="all-num">
+								<div class="user_do_nums">2</div>
+								<div class="titlefz">总计做题天数</div>
+							</div>
+						</div>
+						<div class="excited-word">再长的路，一步步也能走完，再短的路，不迈开双脚也无法达到。</div>
+					</div>
+				</div>
+			</div>
+			<footer class="m-tabbar" style="padding: 0 .2rem .2rem .2rem;">
+				<div class="m-button crt">
+					<button class="btn-block  finish">查看答案解析</button>
+				</div>
+			</footer>
+			
+			
+			<!--宝箱界面-->
+			<div class="m-actionsheet" id="module_box"> 
+			  <div class="line"></div>
+			  <ul class="promotion">
+			  	<li class="level_one flex flexaligin" data-days="3" data-medalid="1">
+			  		<div class="box_icon"></div>
+			  		<div class="flexsb">
+			  			<div class="process_modal" style="margin-right: 0;">
+			  				已连续完成2天，还差1天开启宝箱
+			  				<div class="degree_box">
+			  					<div class="all_degree">
+			  						<div class="complete_degree change_width" style="width: 66.6666%;"></div>
+			  					</div>
+			  					<div class="degree_day">2/3</div>
+			  				</div>
+			  			</div>
+			  			<div class="btn-box-modal">立即领取</div>
+			  		</div>
+			  	</li>
+			  	<li class="level_one flex flexaligin" data-days="7" data-medalid="2">
+			  		<div class="box_icon"></div>
+			  		<div class="flexsb">
+			  			<div class="process_modal grey">连续7天完成每日一练</div>
+			  			<div class="btn-box-modal">立即领取</div>
+			  		</div>
+			  		
+			  	</li>
+			  	<li class="level_one flex flexaligin" data-days="15" data-medalid="3">
+			  		<div class="box_icon"></div>
+			  		<div class="flexsb">
+			  			<div class="process_modal grey">连续15天完成每日一练</div>
+			  			<div class="btn-box-modal">立即领取</div>
+			  		</div>
+			  	</li>
+			  	<li class="level_one flex flexaligin" data-days="30" data-medalid="4">
+			  		<div class="box_icon"></div>
+			  		<div class="flexsb">
+			  			<div class="process_modal grey">连续30天完成每日一练</div>
+			  			<div class="btn-box-modal">立即领取</div>
+			  		</div>
+			  	</li>
+			  </ul>
+			</div>
+			<!--<div class="mask-black none"></div> -->
+			
+		</div>
+		<!--日历弹窗界面-->
+		<div class="mask-black none" id="day_poster_modal" style="display: flex;">
+            <div id="day_modal" class="animate-poster-wx" style="top: -168.042px; left: 167.208px;">
+                <i class="i-modal-close"></i>
+                <div class="day-bg" style="background-image: none;">
+                </div>
+                <div class="modal-btn">
+                    <ul class="day-flex-row none">
+                        <li data-event="friend" data-type="btn">
+                            <div class="wx-friend day-flex-column"><i class="i-main i-wx-friend"></i>微信好友</div>
+                        </li>
+                        <li data-event="friends" data-type="btn">
+                            <div class="wx-friend day-flex-column"><i class="i-main i-wx-friends"></i>微信朋友圈</div>
+                        </li>
+                        <li data-event="save" data-type="btn">
+                            <div class="wx-friend day-flex-column"><i class="i-main i-save-img"></i>保存图片</div>
+                        </li>
+                    </ul>
+                    <div class="btn-save-img day-flex-row" data-type="btn" data-event="save">
+                		保存图片
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mask-black none" id="preview_poster" style="background-color: rgba(0,0,0,0);">
+        	<div>
+        		<i class="i-modal-close"></i>
+        		<img src=""/>
+        </div>
+        <img id="day_top" style="position: absolute;clip: rect(0, 0, 0, 0);" src="./img/bg-day-modal-3.jpg">
+        <img id="day_bottom" style="position: absolute;clip: rect(0, 0, 0, 0);" src="./img/bg-day-footer.jpg">
+        <img id="day_time" style="position: absolute;clip: rect(0, 0, 0, 0);" src="./img/bg-day-time.png">
+        <img id="day_info" style="position: absolute;clip: rect(0, 0, 0, 0);" src="./img/bg-day-info.png">
+        <img id="day_head" style="position: absolute;clip: rect(0, 0, 0, 0);" src="./img/collection.png">
+       
+		
+		<script src="js/jquery-2.0.0.min.js"></script>
+		<script src="js/ydui.citys.js"></script>
+		<script src="js/ydui.js"></script>
+		<script>
+		var num= 0;
+		var dialog = window.YDUI.dialog;
+		//正确率动画
+		var colok=setInterval(function(){
+			num++;
+			if(num==10)clearInterval(colok);
+			$("#PreviewGaugeMeter_2").text(num);
+		},50)
+		
+		function closeDayPoster ($this) {
+	        $this.fadeOut();
+	        setTimeout(function() {
+	            $this.find('#day_modal').removeClass('no-animate-poster-app');
+	            $this.find('#day_modal').removeClass('no-animate-poster-wx');
+	            $this.css('display', 'flex').addClass('none');
+	        }, 500); 
+        }
+		var startX,startY,moveEndX,moveEndY;
+		// 增加监听滑动 显示关闭宝箱touchstart事件：当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。
+        $("#module_box").on("touchstart", function(e) {
+            startX = e.originalEvent.changedTouches[0].pageX;
+            startY = e.originalEvent.changedTouches[0].pageY;
+        });
+		//touchmove当手指从屏幕上离开的时候触发。
+        $("#module_box").on("touchmove", function(e) {
+            e.preventDefault();
+            moveEndX = e.originalEvent.changedTouches[0].pageX;
+            moveEndY = e.originalEvent.changedTouches[0].pageY;
+            var X = moveEndX - startX;
+            var Y = moveEndY - startY;
+            if ( Math.abs(Y) > Math.abs(X) && Y > 0) {//判断点击开始比离开的时候距离大
+                $('#module_box').actionSheet('close');
+            }
+        });
+		
+		//显示日历的日期
+		$(".day-calendar").text(new Date().getDate());
+		// 打开宝箱按钮
+        $('body').on('click', '.day_box_flex',function() {
+            $('#module_box').actionSheet('open');
+            //$(".m-actionsheet").addClass("actionsheet-toggle");
+            $(".g-flexview .mask-black").removeClass("none");
+        });
+
+        $('body').on('click', '.g-flexview .mask-black', function() {
+           // $(".m-actionsheet").removeClass("actionsheet-toggle"); 
+            $(this).addClass("none");
+            $('#module_box').actionSheet('close');
+        });
+        
+         // 点击遮罩层关闭弹窗,日历的
+        $('body').on('click', '#day_poster_modal, #day_modal .i-modal-close', function(e) {
+        	
+            if(e.target == this){
+                var $this = $('#day_poster_modal');
+                closeDayPoster($this);
+            }
+        });
+        $('body').on('click', '#preview_poster, #preview_poster .i-modal-close', function(e) {
+            if(e.target == this){
+                $('#preview_poster').addClass('none');
+            }
+        });
+        
+        
+//      宝箱立即领取点击事件
+        $('body').on('click', '.btn-box-modal', function(e) { //点击已完成目标但是未开的宝箱时候
+            var _this = $(this);
+            var day=_this.parent().parent().attr("data-days");
+            dialog.toast('连续完成' + day + '天才能解锁此宝箱', 'none', 2000);
+               
+        });
+        //查看解析的点击事件
+        $(".finish").click(function(){
+        	window.location.href = "day_parsing.html";
+        })
+        // 判断是否是单个数字 是的话前面加0返回
+        function isOneNum(num) {
+            num += '';
+            if (num.length == 1) {
+                return '0' + num;
+            } else {
+                return num;
+            }
+        }
+        
+        //日历的点击事件
+        $(".day-calendar").click(function(){
+			$("#day_poster_modal").removeClass("none");
+			 var img = $('#day_poster_modal .day-bg').css('background-image');
+            if(img == 'none'){
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth()+1;
+                var day = date.getDate();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var weeks = ["日","一","二","三","四","五","六"];
+                var week = date.getDay(); //星期
+                var last_days = 2;//已坚持每日一练的天数
+                var join_count = 2;//参与的人数
+                var higher = Math.floor(join_count * (0.1 + last_days * 0.0035) / 10000);
+                var data = {};
+                data.date = [year + '年' + isOneNum(month) + '月',
+                            isOneNum(day),
+                            '星期'+weeks[week]];
+                data.info = [isOneNum(hour) + ':' + isOneNum(minute),
+                            last_days,
+                            join_count,
+                            higher];
+                data.word = $.trim($('.day-water .excited-word').html());
+				previewImg(data);
+			}
+		})
+        
+        // 生成日签海报图片
+        function previewImg(data) {
+            var canvas = document.createElement('canvas');
+            canvas.width = 750;
+            canvas.height = 1250;
+            var context = canvas.getContext('2d');
+            var wordWidth = 0;
+            var imgTop = document.getElementById('day_top');
+            var imgBottom = document.getElementById('day_bottom');
+            var imgTime = document.getElementById('day_time');
+            var imgInfo = document.getElementById('day_info');
+            var imgHead = document.getElementById('day_head');
+//			var img = new Image();//创建新的图片对象
+//			  
+//		  	img.setAttribute("crossOrigin",'Anonymous');
+//		  	img.src='img/bg-day-modal-3.jpg';
+//		 	img.onload = function(){//图片加载完，再draw 和 toDataURL
+		         
+		
+            context.drawImage(imgTop,0,0,750,800);//img,x坐标,y坐标,width,height
+            context.drawImage(imgBottom,0,750,750,450);
+            context.drawImage(imgTime,45,0,132,160);
+            context.drawImage(imgInfo,45,320,660,220);
+            context.save();
+            context.arc(129, 430, 60, 0, 2 * Math.PI);
+            context.clip();
+            context.drawImage(imgHead, 69, 370, 120, 120);
+            context.restore();
+
+            context.textAlign = "start";
+            context.fillStyle = '#fff';
+            context.font = '23px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.date[0], 52, 32);//text,x坐标,y坐标,maxWidth
+            context.font = '66px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.date[1], 77, 101);
+            context.font = '26px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.date[2], 74, 140);
+
+            context.fillStyle = '#101010';
+            context.font = '40px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.info[0], 203, 432);//时间
+            wordWidth = context.measureText(data.info[0]).width;
+            context.font = '28px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText('已坚持每日一练', 220 + wordWidth, 430);
+            wordWidth = wordWidth + context.measureText('已坚持每日一练').width;
+            context.font = 'bold 66px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.info[1], wordWidth + 225, 432);//每日一练的
+            wordWidth = wordWidth + context.measureText(data.info[1]).width;
+            context.font = '26px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText('天', 234 + wordWidth, 430);
+
+            context.fillStyle = '#999999';
+            context.font = '26px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(data.info[2], 208, 482);
+            wordWidth = context.measureText(data.info[2]).width;
+            context.fillText('人正在参与  比', 208 + wordWidth, 482);
+            wordWidth = wordWidth + context.measureText('人正在参与  比').width;
+            context.fillText(data.info[3], 208 + wordWidth, 482);
+            wordWidth = wordWidth + context.measureText(data.info[3]).width;
+            context.fillText('万人坚持的久', 208 + wordWidth, 482);
+            context.fillStyle = '#101010';
+            context.font = 'bold 32px "Microsoft YaHei","Arial", "SimSun"';
+            if (data.word.length > 18) {
+                context.fillText(data.word.substring(0,19), 74, 860);
+                context.fillText(data.word.substring(19,data.word.length), 74, 912);
+            } else {
+                context.fillText(data.word, 74, 860);
+            }
+
+            context.font = '28px "Microsoft YaHei","Arial", "SimSun"';
+            context.fillText(localStorage.exam_name + '考试', 76, 1110);
+
+            $('#preview_poster').html('<div><i class="i-modal-close"></i><img src="' + canvas.toDataURL('image/png') +  '"></div>');
+            $('#day_poster_modal .day-bg').css('background-image', "url(" + $('#preview_poster img').attr('src') + ")");
+        }
+       //}
+        
+        //保存图片的点击事件
+        $(".btn-save-img").click(function(){
+        	$("#preview_poster").removeClass("none");
+        })
+		</script>
+	</body>
+</html>

@@ -1,0 +1,188 @@
+.page-main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.page-left {
+    position: absolute;
+    left: 0;
+    width: 1.8rem;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #F5F5F5;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 1;
+}
+.page-right {
+    position: absolute;
+    right: 0;
+    left: 1.8rem;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.page_shop * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+.page-left .item.active .title {
+    color: #b4272d;
+}
+.page-left .item .title {
+	position: relative;
+    font-size: .28rem;
+    padding: .35rem .1rem .35rem .25rem;
+}
+.page-left .item .crt {
+    background-color: #fff;
+}
+.page-left .item {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #ebebeb;
+}
+.page-right .item{
+    width: 100%;
+    height: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    border-top: 1px solid #ebebeb;
+}
+.page-right .item li {
+    border-bottom: 1px solid #ebebeb;
+    padding: .35rem .2rem;
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .3rem;
+    background-color: #fff;
+}
+.page-right .item li a {
+    flex: 1;
+    -webkit-flex: 1;
+}
+.page-right .item li:after {
+    margin-left: .05rem;
+    margin-right: -.08rem;
+    display: block;
+    font-family: YDUI-INLAY;
+    font-size: .34rem;
+    color: #C9C9C9;
+    content: '\e608';
+    margin-top: .05rem;
+}
+.page-left .item ul li {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    font-size: 12px;
+    padding: .3rem .1rem .3rem .25rem;
+    background-color: #fff;
+}
+.page-left .item ul li i {
+    left: .2rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+    display: inline-table;
+}
+.points {
+    background-color: #E05F5F;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-radius: 8px;
+}
+.page-left .item ul li span {
+    margin-left: .1rem;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+#shop_index{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-timing-function: linear;
+    transform: translate3d(0px, 0px, 0px);
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
+.page_shop.page.shop {
+    background-color: #fff;
+    font-size: .32rem;
+}
+.page_shop.page.shop .page-left .item .titles {
+    font-size: .28rem;
+    padding: .35rem .1rem .35rem .25rem;
+}
+.page_shop.page.shop .page-left .item .titles {
+    position: relative;
+}
+.page-left .item ul li .pointsred{
+    background:#F23030;
+}
+.page-left .item.active .titles {
+    color: #b4272d;
+}
+.page-left .item.active .titles:after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    border-left: 3px solid #b4272d;
+}
+.page-right .item li a .tags span[data-model=ebook] {
+    background-color: #fed13a;
+}
+.page-right .item li a .tags span[data-model=exam] {
+    background-color: #ffa74a;
+}
+.page-right .item li a .tags span[data-model=goods] {
+    background-color: #f65e59;
+}
+.page-right .item li a .tags span[data-model=tiku] {
+    background-color: #5bba5e;
+}
+.page-right .item li a .tags span[data-model=video]{
+    background-color: #61a5fb;
+}
+.page-right .item li a .tags span {
+    color: #fff;
+    margin: .03rem 2px;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 1px 2px;
+    display: inline-block;
+}
+.tabbar-icon {
+    color: #696969;
+}

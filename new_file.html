@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#dks{
+			    width: 200px;
+    			height: 200px;
+    			background: url(img/water-3.svg);
+    			background-size: cover;
+    			-webkit-animation: box_modal_wx 0.3s 1 linear;
+    			animation: box_modal_wx 0.3s 1 linear;
+    			animation-fill-mode: forwards;
+    			-webkit-animation-fill-mode: forwards;
+    			
+			}
+			.none{
+				display: none;
+			}
+			/*左右摇摆*/
+			@-webkit-keyframes name{
+				20% {
+			        -webkit-transform: rotate(15deg)
+			    }
+			    40% {
+			        -webkit-transform: rotate(-10deg)
+			    }
+			    60% {
+			        -webkit-transform: rotate(5deg)
+			    }
+			    80% {
+			        -webkit-transform: rotate(-5deg)
+			    }
+			    to {
+			        -webkit-transform: rotate(0deg)
+			    }
+			}
+			/* 动画特效 */
+			/*弹窗小变大*/
+			@-webkit-keyframes zoomIn{
+				from{
+					opacity:0;
+					-webkit-transform:scale3d(.3,.3,.3);
+					transform:scale3d(.3,.3,.3)
+				}
+				50%{
+					opacity:1;
+				}
+			}
+			/*水波纹动效*/
+			@-webkit-keyframes box-wave {
+			    0% {
+			        background-position-x: 0;
+			    }
+			    50% {
+			        background-position-x: 50%;
+			    }
+			    100% {
+			        background-position-x: 100%;
+			    }
+			}
+			
+			@-webkit-keyframes scalebx {
+		     	30% {
+    				-webkit-transform: scale(1.2, 1.2);
+    				transform: scale(1.2, 1.2);
+    				background-position-x: 0;
+			    }
+			    60% {
+			        -webkit-transform: scale(.8, .8);
+			        transform: scale(.8, .8);
+			        background-position-x: 60%;
+			    }
+			    90% {
+			        -webkit-transform: scale(1.2, 1.2);
+			        transform: scale(1.2, 1.2);
+			        background-position-x: 90%;
+			    }
+			    to {
+			        -webkit-transform: scale(1, 1);
+			        transform: scale(1, 1);
+			        background-position-x: 100%;
+			    }
+			}
+			@-webkit-keyframes box_modal_wx {
+			    0% {
+			        transform: scale(0.1);
+			        opacity: 0
+			    }
+			    100% {
+			        top: .55rem;
+			        left: 50%;
+			        opacity: 1;
+			        transform: translateX(-50%) scale(1);
+			    }
+			}
+		</style>
+	</head>
+	<body style="overflow: hidden;">
+		<div id="dks">
+			
+		</div>
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/jquery.lazyload.js"></script>
+	<script src="js/ydui.flexible.js"></script>
+	<script src="js/ydui.js"></script>	
+	<script>
+		var str="Hello world!";
+		
+		var s="fds"
+		var a=str.indexOf("o");
+		var work_condition = { 1: "稳定，可以长期发展", 2: "有晋升空间，同事相处融洽", 3: "可以照顾到家庭，又能实现自我价值", 4: "可以学习进步以及提升自我" };
+	   	
+	   	//console.log(work_condition[1]);
+	   	$("body").on("click", "#dks", function() {
+            $(this).addClass("taskbiger")
+          })
+	   	
+	</script>
+	</body>
+</html>

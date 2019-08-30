@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/ydui.css" />
+		<style>
+			.contarins{
+				width: 20rem;
+				font-size: 1.2rem;
+				flex-direction: column;
+			}
+			.cell-arrow:after{
+				position: relative;
+			    right: 0;
+			    top: 0.2rem;
+			    color: #C9C9C9;
+			    font-size: 1.2rem;
+			}
+			.add_view{
+				font-size: 1.2rem;
+			}
+			.flex{
+				display: flex;
+				justify-content: space-between;
+			}
+			.lists{
+				flex-direction: row;
+			}
+			.none{
+				display: none;
+			}
+		</style>
+	</head>
+	<body style="background: #FFFFFF;overflow: hidden;">
+	<div id="demo">
+		<div class="contarins flex">
+			<div class="flex lists0">
+				<span class="t_title">时间一：</span>
+				<div class="body">积分打开了几分</div>
+				<i class="cell-arrow"></i>
+				<span class="delete_view none">删除</span>
+			</div>
+		</div>
+		<div class="add_view" data-time="0">添加</div>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+		<img class="lazy" data-url="img/132.jpg"/>
+	</div>
+	
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/jquery.lazyload.js"></script>
+	<script src="js/datePicker.js"></script>
+	<script src="js/ydui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var times = {};
+		$('img.lazy').lazyLoad({
+            binder: '#demo',
+            effect: "fadeIn", //渐现，show(直接显示),fadeIn(淡入),slideDown(下拉)
+            threshold: 200,
+        });
+		
+		
+		$('body').on('click', '.add_view', function() {
+			
+			var number =parseInt($(".add_view").data("time")) + 1;
+			
+			$(".add_view").data("time",number);
+			$(".delete_view").removeClass("none");
+			var t_title = "时间二：";
+			if($(".t_title").length == 2){
+				t_title = "时间三：";
+				$(".add_view").addClass("none");
+			}
+			var html = '<div class="flex lists'+number+'">'
+			+'<span class="t_title">'+t_title+'</span>'
+			+'<div class="body">积分打开了几分</div>'
+			+'<i class="cell-arrow"></i>' 
+			+'<span class="delete_view">删除</span>'
+			+'</div>';
+			$(".contarins").append(html);
+			
+			creattime(number);
+			
+		}) 
+		
+		$("body").on("click",".delete_view",function(){
+			$(this).parent().remove();
+			$(".add_view").removeClass("none");
+			$(".t_title").eq(0).text("时间一：");
+			$(".t_title").eq(1).text("时间二：");
+			if($(".t_title").length == 1){
+				$(".delete_view").addClass("none");
+			}
+		}) 
+		
+		creattime(0);
+		function creattime(number){
+			times["time"+number] = new datePicker();
+	        times["time"+number].init({
+	            'trigger': '.lists'+number+' .body', // 按钮选择器，用于触发弹出插件
+	            'type': 'zdtime', //模式：date日期；datetime日期时间；time时间；ym年月,zdtime自定义
+	            'minDate': GetDateStr(0), //最小日期
+	            'maxDate': GetDateStr(14), //最大日期 
+	            'value': getDateStr(1),
+	            'onSubmit': function() { //确认时触发事件
+	                var theSelectData = times["time"+number].value; //选择的时间
+	                var time = theSelectData.split(" ");
+	                var week = new Date(rDateForm(theSelectData)).getDay();
+	                if (week == 6 || week == 0) {
+	                	console.log('休息日无法安排面试，请重新选择');
+	                } else {
+	                   $(".lists"+number).children(".body").text(theSelectData);
+	                }
+	            },
+	            'onClose': function() { //取消时触发事件
+	            }
+	        });
+		}
+		
+        
+        
+        
+        
+    //获取AddDayCount天后的日期
+    function GetDateStr(AddDayCount) {
+        var dd = new Date();
+        dd.setDate(dd.getDate() + AddDayCount);
+        var y = dd.getFullYear();
+        var m = ('0' + (dd.getMonth() + 1)).substr(-2); //获取当前月份的日期
+        var d = ('0' + dd.getDate()).substr(-2);
+        return y + "-" + m + "-" + d;
+    }
+    //第二天九点
+    function getDateStr(dayCount){
+        if(null == dayCount){
+         dayCount = 0;
+        }
+         var dd = new Date();
+         dd.setDate(dd.getDate()+dayCount);//设置日期
+         var y = dd.getFullYear();
+         var m = dd.getMonth()+1;//获取当前月份的日期
+         var d = dd.getDate();
+         return y+"-"+m+"-"+d + ' 9:00';
+    }
+    function rDateForm(d) {
+        return (d || "").replace(/-/g, "/");
+    }
+	</script>
+	</body>
+</html>

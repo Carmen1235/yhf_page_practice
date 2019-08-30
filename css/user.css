@@ -1,0 +1,65 @@
+#tiku_user{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transition-timing-function: linear;
+    transform: translate3d(0px, 0px, 0px);
+    display: block;
+    opacity: 1;
+    z-index: 2;
+    background-color: #f7f7f7;
+}
+.page{    
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+    overflow: auto;
+    width: 100%;
+    min-height: 100%;
+    background-color: #f7f7f7;
+    color: #101010;
+    opacity: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    font-size: .32rem;
+}
+#tiku_user .head {
+    background-color: #fff;
+    padding: .3rem;
+}
+#tiku_user .head .info {
+    margin-left: .3rem;
+}
+#tiku_user .head .info .id {
+    color: #999;
+    font-size: 12px;
+}
+#tiku_user .head .info .name {
+    margin-bottom: .15rem;
+}
+.mains {
+    background-color: #fff;
+    padding: .2rem .2rem .4rem;
+    margin-bottom: .2rem;
+}
+#tiku_user .mains .flex1 {
+    text-align: center;
+}
+#tiku_user .mains .top {
+    font-size: .3rem;
+    font-weight: bold;
+    margin-bottom: .1rem;
+}
+#tiku_user .mains .bottom {
+    color: #999;
+    font-size: .24rem;
+}

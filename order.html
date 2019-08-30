@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	    <meta content="telephone=no" name="format-detection"/>
+	    <link rel="stylesheet" href="css/ydui.css?rev=a4b9d6e8c9c1cae7ea4676f911682af7"/>
+	    <link rel="stylesheet" href="css/index.css"/>
+	    
+	</head>
+	<body>
+	<div class="g-flexview" id="shop_order">
+		<div class="g-scrollview">
+			<div class="nav">
+				<div class="top-nav">
+					<div class="nav-scroll-contet">
+						<div class="nav-item active">全部</div>
+						<div class="nav-item">口袋书</div>
+						<div class="nav-item">试卷</div>
+						<div class="nav-item">视频</div>
+						<div class="nav-item">题库</div>
+						<div class="nav-item">押密</div>
+						<div class="nav-item">资料</div>
+						<div class="nav-item">考点</div>
+						<div class="nav-item">学历</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="id_nodata">
+				<div class="no_list">S</div>
+				<div class="no_list_tip">抱歉，您还没有购买过口袋书</div>
+				<div class="no_list_button id_look">去看看口袋书</div>
+			</div>
+			
+			<!--展示的数据-->
+			<div class="main-mid">
+				<ul class="order">
+					<!--<li class="list">
+						<div class="list_top">
+							<div class="list_title">2019年初级会计职称《会计实务》  考前黄金冲刺题-含答案解析</div>
+						</div>
+						<div class="list_bottom">
+							<div class="lefts">0元</div>
+						</div>
+						<i class="cell-arrow"></i>
+					</li>-->
+				</ul>
+				
+				<div class="no_list_button id_buy">查看更多</div>
+			</div>
+			
+		</div>
+		<!--右下角的联系客服-->
+		<div class="fixed_area">
+			<img src="img/kefu.png"/>
+		</div>
+		
+		
+		<footer class="m-tabbar ziliao-footer" style="border-top: 1px solid #ebebeb;">
+	        <a href="index.html" class="tabbar-item">
+	            <span class="tabbar-icon">
+	                <i class="ziliaoicon icon-leaf"></i>
+	            </span>
+	            <span class="tabbar-txt">题库</span>
+	        </a>
+	        <a href="kaodian.html" class="tabbar-item">
+	            <span class="tabbar-icon">
+	                <i class="i-main icon-notes"></i>
+	            </span>
+	            <span class="tabbar-txt">考点</span>
+	        </a>
+	        <a href="shop.html" class="tabbar-item tabbar-active act">
+	            <span class="tabbar-icon">
+	                <i class="icon-shopcart-outline"></i>
+	            </span>
+	            <span class="tabbar-txt">商城</span>
+	        </a>
+	        <a href="#" class="tabbar-item">
+	            <span class="tabbar-icon">
+	                <i class="i-main icon-download"></i>
+	            </span>
+	            <span class="tabbar-txt">微课</span>
+	        </a>
+	        <a href="user.html" class="tabbar-item">
+	            <div class="tabbar-icon">
+	                <i class="icon-ucenter-outline"></i>
+	                <!--<span class="tabbar-dot"></span>-->
+	            </div>
+	            <div class="tabbar-txt">我的</div>
+	        </a>
+	    </footer>
+	</div>
+		
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/ydui.js"></script>
+	<script src="js/ydui.flexible.js"></script>
+	<script>
+		var xztext;
+		$(".id_nodata").hide();
+		//这个是在初始化的时候可以显示所有的全部数据
+		arrData($(".nav-scroll-contet .nav-item"));
+		//上面标题滑动的点击事件
+		$(".nav-item").click(function(){
+			var s=[];
+			$(this).addClass("active").siblings().removeClass("active");
+			xztext=$(this).text();
+			var a=$(".nav-scroll-contet .nav-item");
+			
+			if(xztext=="全部"){
+				$(".main-mid").show();//展示的数据页面
+				$(".id_nodata").hide();//隐藏没有数据的内容页面
+				arrData(a);
+			}else if(xztext=="口袋书"){
+				$(".main-mid").hide();
+				$(".id_nodata").show();
+			}else{
+				$(".main-mid").show();
+				$(".id_nodata").hide();
+				arrData($(this));
+			}
+		})
+		
+		$(".g-scrollview").scroll(function(){
+			console.log($(this).scrollTop());
+		})
+		
+		function arrData(data){//吧每个点击进来的数据内容用数组重新进行封装
+			var arr=new Array();
+			$.each(data, function(index,item) {
+				arr.push(data.eq(index).text());
+			});
+			inforData(arr);
+		}
+		function inforData(data){//吧用数组封装好的内容在进行展示出来
+			var s=[];
+//			$(".scroll_lists").empty();
+			
+			$.each(data, function(index,item) {	//下次用each输出吧，别用for了，for in 也算了吧
+				if(data[index]!="口袋书"){//手动判断在口袋书的时候不显示
+					s+='<li class="list">'
+							+'<div class="list_top">'
+								+'<div class="list_title">'+item+'2019年初级会计职称《会计实务》  考前黄金冲刺题-含答案解析</div>'
+							+'</div>'
+							+'<div class="list_bottom">'
+								+'<div class="lefts">0元</div>'
+							+'</div>'
+							+'<i class="cell-arrow"></i>'
+						+'</li>';
+					$(".order").html(s);
+				}
+			});
+		}
+	</script>
+	</body>
+</html>

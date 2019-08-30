@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	    <meta content="telephone=no" name="format-detection"/>
+	    <link rel="stylesheet" href="css/layer.css" />
+	    <link rel="stylesheet" href="css/ydui.css?rev=a4b9d6e8c9c1cae7ea4676f911682af7"/>
+	    <link rel="stylesheet" href="css/tiku.css" />
+	    <link rel="stylesheet" href="css/index.css"/>
+	</head>
+	<body>
+	<div class="page active" id="tiku_task">
+		<div class="g-flexview">
+			<div class="g-scrollview">
+				
+				<div class="m-cell">
+                    <div class="cell-item">
+                        <div class="cell-left flex" style="min-height: 1.2rem;">
+                            <div>
+                                <div class="top flex ai-fe">
+                                	我的积分  
+                                	<img class="icon_pic" src="img/jinbi.png"/>
+                                	<span class="my_integral">35</span>
+                                	<a class="awarded none">+20</a>
+                                </div>
+                                <div class="bottom">积分可兑换考点资料、购买VIP题库时抵扣现金</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="m-cell check_line">
+                    <div class="flex">
+                        <div class="flex1">
+                            <div>
+                            	连续签到<span class="red continue_days">5</span>天
+                            	<i class="i-main icon-question"></i>
+                            </div>
+                            <div class="check_bottom">
+                            	再签<span class="left_days">2</span>
+                            	天最高可获得<span>100</span>积分 
+                            </div>
+                        </div> 
+                        <div class="btnding active">
+                        	<a href="javascript:;" class="btn btn-check">立即签到</a>
+                        </div> 
+                    </div>
+                    <div class="check_circle_line flex">
+                    	
+                    </div>
+                    
+                    <div class="flex every_task_line sb">
+                        <div>你今日的 <span class="red">每日一练</span> 还未完成</div>
+                        <a class="btn btn-gocomplete" href="javascript:;">去完成</a>
+                    </div>
+                </div>
+                
+                <div class="m-cell task_list">
+                	<a class="cell-item" data-is_get="0" data-share_title="分享到朋友圈" data-share_type="timeline">
+                		<div class="cell-left">
+                			<i class="i-main i-timeline"></i>分享到朋友圈
+                		</div>
+                		<div class="cell-right green">+8</div>
+                	</a>
+                	<a class="cell-item" data-is_get="0" data-share_title="分享到护理微信群" data-share_type="wechat">
+                		<div class="cell-left">
+                			<i class="i-main i-wechat"></i>分享到护理微信群
+                		</div>
+                		<div class="cell-right green">+8</div>
+                	</a>
+                	<a class="cell-item" data-is_get="0" data-share_title="分享到QQ" data-share_type="qq">
+                		<div class="cell-left">
+                			<i class="i-main i-qq"></i>分享到QQ
+                		</div>
+                		<div class="cell-right green">+8</div>
+                	</a>
+                	<a class="cell-item" data-is_get="0" data-share_title="分享到QQ空间" data-share_type="qzone">
+                		<div class="cell-left">
+                			<i class="i-main i-qzone"></i>分享到QQ空间
+                		</div>
+                		<div class="cell-right green">+8</div>
+                	</a>
+                </div>
+			
+			</div>
+		</div>
+		
+	<div class="popup">
+        <div class="mask_transition mask" style="display: none;"></div>
+        <div class="share-box1 hide-mask" style="display: none;">
+            <img src="img/jiantou.png">
+            <div class="text share">
+            	分享到<span class="green" style="font-weight: bold;margin: 0 5px;">护理微信群</span>
+            	完成今日签到<br>即可领取<span class="green" style="font-weight: bold;margin: 0 5px;">8</span>
+            	积分
+            </div>
+        </div>
+    </div>	
+		
+		
+	<div class="pup none">
+        <div class="pup-box">
+            <div class="pup-main">
+                <div class="pup-section">
+                        <div class="treasure_box opened"></div>
+                        <ul class="reward_text">
+                            <li class="reward_text_detail">
+                                <div class="title">积分</div>
+                                <div class="content">
+                                    <div>您的积分：<span class="myintegral"></span></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-container">
+                            <div class="d_card">
+                                <div class="d_card_back">
+                                    +<span></span>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                <img class="light rotation" src="img/ylight.png?20190404" alt="">
+            </div>
+        </div>
+    </div>
+    
+	</div>
+	
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/ydui.flexible.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/ydui.js"></script>
+	<script>
+		
+		var s=[];
+		var week=["周一","周二","周三","周四","周五","周六"]; 
+		$.each(week,function(index,item){
+			s ='<div class="flex1">'
+            		+'<div class="check_circle">'
+            			+'<div class="check_date">'+getStart(index+1)+'</div>'
+            			+'<div><i class="check_week">'+week[index]+'</i></div>'
+            		+'</div>'
+            	+'</div>'
+            	$(".check_circle_line").append(s);
+		})
+		s ='<div class="flex1">'
+    		+'<div class="check_circle get_award last_circle"> '
+    			+'<div class="check_date none">周末</div>'
+    			+'<img class="taskbox" src="img/taskboxbox.png" alt="">'
+    		+'</div>'
+    	+'</div>'
+    	$(".check_circle_line").append(s);
+		//签到按钮
+		$("#tiku_task .btnding .btn").click(function(){
+			var hm=$(".check_circle .check_date");
+			var _this=$(this);
+			if(updateTime()=="周末")$("#tiku_task .pup").removeClass("none");
+			$.each(hm, function(index,item) {
+				if(getnowtime()==hm.eq(index).text()){
+					_this.toggleClass("btn-check").toggleClass("btn-have-check");
+					$(".btn-have-check").text("今日已签到");
+					$(".btn-check").text("立即签到");
+					$(".my_integral").text(awarded(20));//加上20分
+					YDUI.dialog.toast('获得' + 20 + '积分奖励', 'none', 2000);
+					$(".awarded").removeClass("none");//显示加分动画
+					$(".awarded").animate({opacity:"0",top:"-0.3rem"},2000);
+					$(".check_circle").eq(index).addClass("checking");
+					$(".check_week").eq(index).toggleClass("check_week").toggleClass("icon-checkoff").text("");
+					$(".check_date").eq(index).text("今天");
+				}
+			});
+		})
+		//加分
+		function awarded(fen){
+			var a=fen+Number($(".my_integral").text());
+			return a;
+		}
+		//今天周几啊
+		function updateTime() {
+		  var date = new Date();
+		  this.day = new Array("周末","周一","周二","周三","周四","周五","周六")[date.getDay()];
+		  return this.day;
+		}
+		//获取当前时间
+		function getnowtime(){
+			var now = new Date();
+			var month=now.getMonth()+1;
+			if(month<10){month="0"+month}
+			var Time =month +'.'+now.getDate();
+		  return Time;
+		}
+		//判断周一到周五的时间
+		function getStart(week){
+		    var now = new Date(); 
+			var nowTime = now.getTime() ; 
+			var day = now.getDay();
+			var oneDayLong = 24*60*60*1000 ;
+			var MondayTime = nowTime - (day-1)*oneDayLong  ; 
+			var SundayTime =  nowTime + (week-day)*oneDayLong ;
+			var sunday = new Date(SundayTime);
+		    var month = (sunday.getMonth()+1)<10? "0"+(sunday.getMonth()+1):(sunday.getMonth()+1);
+		    var day =  sunday.getDate();
+		  	var Time =month +'.'+day;
+		  return Time;
+		}
+		function isNull(obj){
+		    if(typeof obj == "undefined" || obj == null || obj == ""){
+				return true;
+			}else{
+				return false;
+			}
+		 }
+		// 点击遮罩，隐藏弹窗
+        $('#tiku_task .hide-mask').on('click', function() {
+            $('#tiku_task .share-box1,#tiku_task .mask').hide();
+            $("#tiku_task .pup").addClass("none");
+        }); 
+        //宝箱遮罩
+        $('#tiku_task .pup-box,#tiku_task .pup-main img').on('click', function() {
+            $("#tiku_task .pup").addClass("none"); 
+            if($(".get_award img").attr("src")=="img/taskboxbox.png"){
+	            $(".get_award img").attr("src","img/taskopened.png");
+	            $(".my_integral").text(awarded(20));//增加积分
+	            YDUI.dialog.toast('获得' + 20 + '积分奖励', 'none', 2000);
+	            $(".awarded").css({opacity:"1"});//加分动画先显示在隐藏
+	            $(".awarded").animate({opacity:"0",top:"-0.3rem"},2000);
+            }
+        });
+		//分享点击事件
+		$("#tiku_task .task_list .cell-item").click(function(){
+			$(".mask_transition").show(); 
+			$(".hide-mask").show();
+			var channel = $(this).data('share_type');
+		 	if (channel == 'wechat') {
+                share_text = '分享到<span class="green" style="font-weight: bold;margin: 0 5px;">中级护师主管微信群</span>完成今日签到<br>即可领取<span class="green" style="font-weight: bold;margin: 0 5px;">8</span>积分';
+                $('#tiku_task .text.share').html(share_text);
+            } else if (channel == 'timeline') {
+                $('#tiku_task .text.share').html('分享到<span class="green" style="font-weight: bold;margin: 0 5px;">朋友圈</span>完成今日签到<br>即可领取<span class="green" style="font-weight: bold;margin: 0 5px;">8</span>积分');
+            } else if (channel == 'qq') {
+                $('#tiku_task .text.share').html('分享到<span class="green" style="font-weight: bold;margin: 0 5px;">QQ</span>完成今日签到<br>即可领取<span class="green" style="font-weight: bold;margin: 0 5px;">8</span>积分');
+            } else if (channel == 'qzone') {
+                $('#tiku_task .text.share').html('分享到<span class="green" style="font-weight: bold;margin: 0 5px;">QQ空间</span>完成今日签到<br>即可领取<span class="green" style="font-weight: bold;margin: 0 5px;">8</span>积分');
+            }
+		})
+		//宝箱的点击事件
+		$('.get_award').click(function(){
+			//判断是否点击过宝箱
+			if($(".get_award img").attr("src")=="img/taskboxbox.png")$("#tiku_task .pup").removeClass("none");
+		})
+		
+		$(".btn-gocomplete").click(function(){
+			window.location.href="index.html";
+		})
+		
+		//签到规则的点击事件
+		$("#tiku_task .icon-question").click(function(){
+            layer.open({
+                title: '签到规则',
+                content: '<div style="font-size:0.26rem;text-align:left;">'
+		                +'<p>1.每天签到可领取5积分</p><p>2.连续签到7天，可开启宝箱，最高可领取100积分</p>'
+		                +'<p>3.若未连续签到7天，则次日需重新开始签到</p>'
+		                +'<p>4.易哈佛可以根据本活动的实际举办情况对活动规则进行变动或调整，相关变动或调整将公布在活动页面上，公布后依法生效</p>'
+		                +'</div>',
+                btn: [
+                    ['我知道了', 'color:#43a737']
+                ],
+                shadeClose: false,
+                yes: function(index) {
+                    layer.close(index);
+                }
+            });
+        });
+	</script>
+	</body>
+</html>

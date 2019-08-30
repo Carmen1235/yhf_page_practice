@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+	    <meta content="yes" name="apple-mobile-web-app-capable"/>
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	    <meta content="telephone=no" name="format-detection"/>
+	    <link rel="stylesheet" href="css/ydui.css?rev=a4b9d6e8c9c1cae7ea4676f911682af7"/>
+	    <link rel="stylesheet" href="css/tiku.css" />
+	    <link rel="stylesheet" href="css/hr.css"/>
+	    <script src="js/ydui.flexible.js"></script>
+	</head>
+	<body>
+	<div class="page problem active" id="hr_infor_interfance" style="position: absolute; top: 0px; left: 0px; overflow: hidden; transition: initial; transform: translate3d(0px, 0px, 0px); display: block; z-index: 2; opacity: 1;">
+	    <div class="g-flexview">
+	        <header class="m-navbar ai">
+	            <a href="javascript:;" onClick="window.history.back()" class="page-back navbar-item ">
+	                <i class="back-ico"></i>
+	            </a>
+	            <div class="navbar-center">易哈佛招聘</div>
+	        </header>
+	    	<div class="g-scrollview">
+		        
+		        <div class="b-mian-dv">
+			        <div class="b-position">
+			        	<a class="fs-32">应聘职位</a>
+			        	<div class="erinfor-main fs-28"><span>PHP程序员</span></div>
+			        	
+			        </div>
+			        <div class="b-information mt-8">
+			        	<div class="fs-32 pt-4">面试信息</div>
+			        	<div class="pt-4"><a class="gray">面试时间：</a><span class="b-date">2019-06-15 12:00</span></div>
+			        	<div class="pt-4"><a class="gray">面试地点：</a><a class="b-site">鄞州区奥克斯中央大厦1702室</p></div>
+			        	
+			        </div>
+			        <div class="b-to-infor">
+			        	<div class="fs-32 pt-4">应聘者信息</div>
+			        	<div class="pt-4"><a class="gray">姓名：</a><span class="b-name">顾杰</span></div>
+			        	<div class="flex pt-4">
+			        		<div class="pd-infor"><a class="gray">年龄：</a><span class="bh-age">24</span></div>
+			        		<div><a class="gray">性别：</a><span class="bh-sex">男</span></div>
+			        	</div>
+			        	<div class="pt-4"><a class="gray">工作经验：</a><span class="date-year">3年</span></div>
+			        	<div class="pt-4"><a class="gray">到岗时间：</a><span class="date-ctp">一周内到岗</span></div>
+			        	<div class="pt-4 flex"><a class="gray">专业能力：</a><span class="date-ctp">一周内到岗梵蒂冈地方的非官方大哥非官方大哥大哥大三公司的公司的</span></div>
+			        </div>
+			        <div class="b-test-result mt-8">
+			        	<p class="fs-32">专业测试结果</p>
+			        	<div class="result-main">
+			        		<span class="gray">初级php测试题目</span>
+			        		<div class="res-mdiv">
+				        		<div class="result-probability">
+				        			<a class="re-infor">60%</a>
+				        			<a class="gray">正确率</a>
+				        		</div>
+				        		<i class="cell-arrow"></i>
+			        		</div>
+			        	</div>
+			        </div>
+			        
+			      
+			    </div>
+		        </div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/ydui.js"></script>
+	<script>
+		//设置 textarea 的高度随着 内容 增加 自适应
+		$(".txta-infor").height($(".txta-infor")[0].scrollHeight);
+		$(".txta-infor").on("keyup keydown", function(){
+		    this.style.height = 'auto';  
+    		this.style.height = this.scrollHeight + "px";  
+		})
+		$(".send").click(function(){
+			$(".b-accessory").hide();//抄送人隐藏
+			$(".txta-infor").hide();
+			$(".comment .com-infor").removeClass("none");
+		})
+	</script>
+	</body>
+</html>
